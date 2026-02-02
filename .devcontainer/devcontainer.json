@@ -1,0 +1,63 @@
+{
+  "name": "OpenCode + Playwright (Python 3.12)",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspace",
+  "runArgs": [
+    "--env-file",
+    ".env"
+  ],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "remoteUser": "dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-playwright.playwright",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "github.copilot-chat",
+        "github.copilot",
+        "charliermarsh.ruff",
+        "anomalyco.opencode"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "playwright.showTrace": true,
+        "[yaml]": {
+          "editor.insertSpaces": true,
+          "editor.tabSize": 2,
+          "editor.autoIndent": "advanced",
+          "editor.formatOnType": true,
+          "editor.codeLens": true,
+          "diffEditor.ignoreTrimWhitespace": false
+        },
+        "[json]": {
+          "editor.detectIndentation": false,
+          "editor.indentSize": 2,
+          "editor.tabSize": 2,
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "[python]": {
+          "editor.formatOnSave": false,
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.rulers": [
+            120
+          ],
+          "editor.formatOnType": true
+        }
+      }
+    }
+  },
+  "postCreateCommand": ".devcontainer/post_create_script.sh",
+  "features": {}
+}

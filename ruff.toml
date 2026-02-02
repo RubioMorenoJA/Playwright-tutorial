@@ -1,0 +1,100 @@
+line-length = 120
+target-version = "py311"
+output-format = "concise"
+exclude = [
+    ".vscode",
+    ".venv",
+    "venv",
+    "_output",
+    ".ruff_cache"
+]
+
+[format]
+preview = true
+
+[lint]
+preview = true
+select = [
+    "A", # Flake8 builtins
+    "B", # Flake8 bugbear
+    "D", # Pydocstyle
+    "E", # Pycodestyle errors
+    "F", # Pyflakes
+    "G", # Flake8 logging-format
+    "I", # Isort
+    "N", # Pep8-naming
+    #"Q", # Flake8-quotes TODO: Refactor quotes and enable this. https://jira.tid.es/browse/NOV-237234
+    "S", # Flake8 bandit
+    "W", # Pycodestyle warnings
+    "ANN", # Flake8 annotations
+    "ASYNC", # Flake8 async
+    "ARG", # Flake8 unused-arguments
+    "BLE", # Flake8 blind-except
+    "COM", # Flake8 commas
+    "C4", # Fake8 comprehensions
+    "C90", # McCabe
+    "DTZ", # Flake8 datetime
+    "EXE", # Flake8 executable
+    "ERA", # Eradicate
+    "FA", # Flake8 future-annotations
+    "FBT", # Flake8 boolean-trap
+    "FLY", # Flake 8 misc lints
+    "INP", # Flake8 implicit-namespace
+    "INT", # Flake8 gettext
+    "ISC", # Flake8 implicit-str-concat
+    "ICN", # Flake8 import-conventions
+    "NPY", # Numpy
+    "PYI", # Flake8 pyi
+    "PIE", # Flake8 pie
+    "PERF", # Perflint
+    "PT", # Flake8 pytest
+    "PTH", # Flake8 path-lib
+    "PL", # Pylint
+    "RET", # Flake8 return
+    "RSE", # Flake8 raise
+    "RUF", # Ruff
+    "SLOT", # Flake8 slots
+    "SLF", # Flake8 self
+    "SIM", # Flake8 simmplify
+    "TCH", # Flake8 type-checking
+    "TD", # Flake8 todos
+    "TID", # Flake8 tidy-imports
+    "TRY", # Tryceratops
+    "T10", # Flake8 debugger
+    "T20", # Flake8 print
+    "TCH", # Flake8 type-checking
+    "UP", # Flake8 pyupgrade
+    "YTT" # Flake8 2020
+]
+ignore = [
+    "B024", # abstract-base-class-without-abstract-method
+    "D203", # no-blank-after-docstring
+    "D213", # multi-line-docstring-closing-quotes
+    "ICN001", # unconventional-import-alias
+    "PLR0904", # too-many-public-methods
+    "RET503", # implicit-return
+    "RUF001", # ambiguous-unicode-character-string
+    "RUF012", # mutable-class-default
+    "S307", # suspicious-eval-usage
+    "S602", # subprocess-popen-with-shell-equals-true
+    "I001", # Import block is un-sorted or un-formatted
+    "D103", # Missing docstring in public function
+]
+fixable = ["E", "F", "S", "W", "COM", "PIE", "PLC", "PLR", "RUF", "SIM"]
+unfixable = []
+
+[lint.pylint]
+max-branches = 15
+max-args = 8
+
+[lint.mccabe]
+max-complexity = 15
+
+[lint.flake8-unused-arguments]
+ignore-variadic-names = true
+
+[lint.flake8-annotations]
+ignore-fully-untyped = true
+
+[lint.flake8-builtins]
+builtins-ignorelist = ["list", "input", "type", "id", "hash", "filter", "next"]

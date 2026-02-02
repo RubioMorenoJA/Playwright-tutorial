@@ -1,0 +1,13 @@
+# Secrest
+.env
+
+# Python
+__pycache__/
+.pytest_cache/
+
+# Playwright (execution artifacts)
+.playwright/
+
+# Editor
+.vscode/
+.opencode.yaml

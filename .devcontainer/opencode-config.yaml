@@ -1,0 +1,42 @@
+version: "1.0"
+default_model: opencode/kimi-k2.5-free
+
+agent:
+  enabled: true
+  mode: development
+  verbosity: normal
+  default_model: opencode/kimi-k2.5-free
+  explain_changes: true
+  auto_suggest: true
+  api_key: ${OPENCODE_API_KEY}
+
+models:
+  coding:
+    provider: opencode
+    model: kimi-k2.5-free
+
+context:
+  include_git: true
+  include_tests: true
+  include_readme: true
+  include_tree: true
+  include_open_files: true
+  max_files: 40
+  max_file_size_kb: 300
+
+project:
+  language: python
+  framework:
+    - playwright
+  style:
+    tests: pytest
+    formatting: ruff
+    typing: strict
+
+ui:
+  color: true
+  markdown: true
+  pager: less
+
+privacy:
+  telemetry: false
