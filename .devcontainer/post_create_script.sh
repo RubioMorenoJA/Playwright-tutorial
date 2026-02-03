@@ -43,7 +43,4 @@ echo "▶ Installing Python project dependencies from pyproject.toml..."
 pip install --upgrade pip
 pip install -e .
 
-echo "▶ Ensuring Playwright browsers are ready..."
-playwright install chromium firefox
-
 echo "✔ postCreateCommand finished"
