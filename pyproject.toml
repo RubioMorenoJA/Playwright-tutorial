@@ -1,0 +1,33 @@
+[project]
+name = "Playwright-tutorial"
+version = "0.1.0"
+description = "Curso de Playwright configurado para entorno aislado con OpenCode"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright>=1.49.0",
+    "pytest>=8.0.0",
+    "pytest-playwright>=0.5.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.poetry]
+# Si decides usar Poetry como gestor (que ya instalaste en el Dockerfile)
+packages = [{include = "src"}]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+# Configuración por defecto para ver el navegador si lo necesitas (vía xvfb en Docker)
+addopts = "--browser chromium --browser firefox --base-url http://localhost:8000"
+asyncio_mode = "auto"
+
+ignore = []
+
+[tool.playwright]
+# Configuración específica para el plugin de VS Code dentro de Docker
+browser_path = "/ms-playwright"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"

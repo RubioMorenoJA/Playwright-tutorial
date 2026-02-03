@@ -1,0 +1,36 @@
+name: OpenCode-Playwright-Env
+version: 0.0.1
+schema: v1
+
+models:
+  - title: Kimi (OpenCode)
+    provider: openai
+    model: opencode/kimi-k2.5-free
+    apiKey: ${OPENCODE_API_KEY}
+    apiBase: https://api.opencode.ai/v1
+
+tabAutocompleteModel:
+  title: Kimi Autocomplete
+  provider: openai
+  model: opencode/kimi-k2.5-free
+  apiKey: ${OPENCODE_API_KEY}
+  apiBase: https://api.opencode.ai/v1
+
+tabAutocompleteOptions:
+  debounceDelay: 1000
+  maxPromptTokens: 400
+  useCopyBuffer: true
+
+# Las reglas de comportamiento ahora se llaman 'rules' en lugar de 'systemMessage'
+rules:
+  - "Eres un experto en Playwright y Python 3.12."
+  - "Usa selectores de rol y test-id siempre que sea posible."
+  - "Mantén las respuestas concisas y enfocadas al código."
+
+# Los comandos personalizados ahora se definen en 'prompts'
+prompts:
+  - name: test
+    description: Generar test de Playwright
+    prompt: "Genera un test de Playwright siguiendo las reglas de mi repo para el código seleccionado: {{{ input }}}"
+
+allowAnonymousTelemetry: false

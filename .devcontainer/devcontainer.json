@@ -23,9 +23,9 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "continue.continue",
+        "charliermarsh.ruff",
         "github.copilot-chat",
-        "github.copilot",
-        "charliermarsh.ruff"
+        "github.copilot"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
