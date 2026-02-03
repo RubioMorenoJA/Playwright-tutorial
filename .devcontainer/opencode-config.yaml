@@ -23,6 +23,7 @@ context:
   include_open_files: true
   max_files: 40
   max_file_size_kb: 300
+  custom_instructions_file: ".opencode-rules.md"
 
 project:
   language: python
