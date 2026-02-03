@@ -22,10 +22,10 @@
         "ms-azuretools.vscode-docker",
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
+        "continue.continue",
         "github.copilot-chat",
         "github.copilot",
-        "charliermarsh.ruff",
-        "anomalyco.opencode"
+        "charliermarsh.ruff"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",

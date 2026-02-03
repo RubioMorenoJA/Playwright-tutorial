@@ -6,8 +6,9 @@ if [ ! -d "$HOME/.config/opencode" ]; then
     echo "▶ Creating ...$HOME/.config/opencode"
     mkdir -p "$HOME/.config/opencode"
 fi
-cp .devcontainer/opencode-config.yaml "/workspace/.opencode.yaml"
-cp .devcontainer/opencode-config.yaml "$HOME/.config/opencode/config.yaml"
+
+cp .devcontainer/opencode.json /workspace/opencode.json
+cp .devcontainer/opencode.json "$HOME/.config/opencode/opencode.json"
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then 
     echo "▶ Installing Oh My Zsh..."
